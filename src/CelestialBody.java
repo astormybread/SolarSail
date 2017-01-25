@@ -1,13 +1,14 @@
-public class CelestialBody{
-    String name;
-    double mass;    //mass
-    double x;       // position on the x-axis
-    double y;       // position on the y-axis
-    double vx;      // x-component of velocity
-    double vy;      // y-component of velocity
-    double ax = 0;  // x-component of acceleration
-    double ay = 0;  // y-component of acceleration
-    
+public  abstract class CelestialBody{
+    private static String name;
+     private static double mass;    //mass
+    private double x;       // position on the x-axis
+    private double y;       // position on the y-axis
+    private double[] v = new double[2];
+    // v[0];      // x-component of velocity
+    // v[1];      // y-component of velocity
+    private double ax = 0;  // x-component of acceleration
+    private double ay = 0;  // y-component of acceleration
+
 //////////////////CONSTRUCTORS//////////////////////
 
 
@@ -21,37 +22,37 @@ public class CelestialBody{
     {
         mass = newValue;
     }
-    
+
     void setx(double newValue)
     {
         x = newValue;
     }
-    
+
     void sety(double newValue)
     {
         y = newValue;
     }
-    
+
     void setvx(double newValue)
     {
-        vx = newValue;
+        v[0] = newValue;
     }
-    
+
     void setvy(double newValue)
     {
-        vy = newValue;
+        v[1] = newValue;
     }
-    
+
     void setax(double newValue)
     {
         ax = newValue;
     }
-    
+
     void setay(double newValue)
     {
         ay = newValue;
     }
-    
+
 //////////////////////////////////////////////////
 
 ///////////////ACCESSORS/////////////////////////
@@ -61,37 +62,38 @@ public class CelestialBody{
     {
       return mass ;
     }
-    
+
     double x()
     {
      return  x ;
     }
-    
+
     double y()
     {
      return  y ;
     }
-    
+
     double vx()
     {
-      return vx ;
+      return v[0] ;
     }
-    
+
     double vy()
     {
-      return vy ;
+      return v[1] ;
     }
-    
+
     double ax()
     {
      return  ax;
     }
-    
+
     double ay()
     {
       return ay ;
     }
-    
-/////////////////////////////////////////    
-    
+
+/////////////////////////////////////////
+
 }
+
